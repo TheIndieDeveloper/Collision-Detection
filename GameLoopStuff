@@ -1,0 +1,23 @@
+	public static double xOffset,yOffset;
+	
+	public static ArrayList<Block> blocks = new ArrayList<Block>();
+	
+	Player p = new Player(32,32);
+	
+	private void initBlocks() {
+		blocks.add(new Block(800,400,true));
+		blocks.add(new Block(832,400,true));
+		blocks.add(new Block(864,400,false));
+	}
+	
+	private void tickEntitys() {
+		p.tick();
+	}
+	
+	private void RenderAllStuff(Graphics2D g2) {
+		for(Block b : blocks){
+			b.render(g);
+		}
+		
+		p.render(g);
+	}
